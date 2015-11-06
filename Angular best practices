@@ -1,0 +1,73 @@
+Injector-- namespace for the objects there is only one for a given application
+
+==========================================================================
+
+Controller
+----------
+	++Setup the Scope
+	++View Interaction	
+	++Coordinate View and Model
+	--dont have the controller do things its not supposed to do
+	--Limit number of collaborators
+	--testable
+	
+angular.module('app').controller('scheduleCtrl', function($scope) {
+	$scope.name = "schedule";
+})	
+============================================================================
+
+Services
+	++Handle non-view logic
+	++Communicate with the server
+	++Hold data & state
+	++(rarely) DOM manipulation
+	++Business Logic
+	++Meat of the application
+	--Single resposibility
+	--Cohesive
+	--Loosely Coupled
+	--Good Interface
+	--Testable
+	-- 4 ways to create a service: Value, Constant, Factory, Service, Provider, Filter
+		
+app.service('registration', function() {
+return {
+	title: 'Service from Service'
+	}
+})	
+
+********************************************************************
+
+Filter
+	--really just service with specific name
+	--appends the name to end of the service
+	
+============================================================================
+
+Directives 
+	++Manipulate DOM
+	++Recieve View Events
+	--Ng-repeat, Ng-Show
+	--Dont forget snake-space
+	
+	app.directive('myDirective', function() {
+	  return {
+	   	restrict: 'E',
+		replace: true,
+		template:'<div>this is my directive</div>'
+	  }
+	})
+============================================================================
+
+Views 
+	++Display the Application
+	++Declare Bindings & Directives
+	
+============================================================================
+
+Minification
+	++Remove Whitespace
+	++Sorten Variables & Parameters
+	++ng-min
+	
+	
